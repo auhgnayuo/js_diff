@@ -1,0 +1,78 @@
+{
+  "version": "0.1.0",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test",
+    "lint": "tsdx lint",
+    "prepare": "tsdx build",
+    "size": "size-limit",
+    "analyze": "size-limit --why"
+  },
+  "peerDependencies": {},
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "prettier": {
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "name": "@auhgnayuo/diff",
+  "author": "auhgnayuo",
+  "keywords": [
+    "diff",
+    "patch",
+    "array",
+    "object",
+    "map"
+  ],
+  "description": "A lightweight, type-safe, and universal diff/patch library for Arrays, Objects (Record), and Maps. Ideal for data synchronization, state management, collaborative editing, and more.",
+  "module": "dist/diff.esm.js",
+  "size-limit": [
+    {
+      "path": "dist/diff.cjs.production.min.js",
+      "limit": "10 KB"
+    },
+    {
+      "path": "dist/diff.esm.js",
+      "limit": "10 KB"
+    }
+  ],
+  "dependencies": {
+    "@types/deep-equal": "^1.0.0",
+    "deep-equal": "^2.0.0"
+  },
+  "devDependencies": {
+    "@size-limit/preset-small-lib": "^11.2.0",
+    "husky": "^9.1.7",
+    "size-limit": "^11.2.0",
+    "tsdx": "^0.14.1",
+    "tslib": "^2.8.1",
+    "typescript": "^5.8.3"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "homepage": "https://github.com/auhgnayuo/js_diff#readme",
+  "bugs": {
+    "url": "https://github.com/auhgnayuo/js_diff/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/auhgnayuo/js_diff.git"
+  },
+  "types": "dist/index.d.ts"
+}
