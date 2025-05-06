@@ -1,12 +1,12 @@
-# diff
+# Diff (JavaScript)
 
-A Javascript library for calculating and applying diffs (changes) between arrays and maps and object. It provides a unified interface to generate minimal change sets (additions, deletions, updates, movements) and apply them to transform collections efficiently.
+A cross-language library for calculating and applying diffs (changes) between collections (arrays, maps, objects). It provides a unified interface to generate minimal change sets (additions, deletions, updates, movements) and efficiently transform collections.
 
 ## Features
-- Compute minimal diffs between two arrays or maps or objects
-- Apply diffs (patch) to arrays or maps or objects
+- Compute minimal diffs between two collections (arrays, maps, objects)
+- Apply diffs (patch) to collections
 - Supports additions, deletions, updates, and movements
-- Simple API and extensible design
+- Simple, extensible, and consistent API
 
 ## Installation
 
@@ -18,7 +18,7 @@ npm install diff
 
 ## Usage
 
-### 1. Array diff/patch
+### Diff and Patch Arrays
 ```ts
 import { diffArray, applyArrayDiffs } from 'diff';
 
@@ -30,7 +30,7 @@ const patched = applyArrayDiffs(left, diffs);
 // patched: [2, 3, 4]
 ```
 
-### 2. Object diff/patch
+### Diff and Patch Objects
 ```ts
 import { diffRecord, applyRecordDiffs } from 'diff';
 
@@ -42,7 +42,7 @@ const patched = applyRecordDiffs(left, diffs);
 // patched: { b: 3, c: 4 }
 ```
 
-### 3. Map diff/patch
+### Diff and Patch Maps
 ```ts
 import { diffMap, applyMapDiffs } from 'diff';
 
@@ -54,9 +54,24 @@ const patched = applyMapDiffs(left, diffs);
 // patched: Map { 'b' => 3, 'c' => 4 }
 ```
 
+## API
+
+- `Diff`: Abstract base type for all diff operations.
+- `Update`: Represents an update operation.
+- `Addition`: Represents an addition operation.
+- `Deletion`: Represents a deletion operation.
+- `Movement`: Represents a movement operation.
+
+## Running Tests
+
+```sh
+yarn test
+# or
+npm test
+```
+
 ## Dependency
 - [deep-equal](https://www.npmjs.com/package/deep-equal)
 
 ## License
-
 MIT

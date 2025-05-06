@@ -56,7 +56,9 @@ export abstract class Diff {
 }
 
 /**
- * Represents an update operation (changing a value at a key).
+ * Represents an update operation in a diff.
+ * @property {*} key - The key to update.
+ * @property {*} newValue - The new value to set.
  */
 export class Update extends Diff {
   /**
@@ -70,6 +72,7 @@ export class Update extends Diff {
    */
   newValue: any;
   /**
+   * Constructs an Update operation.
    * @param {*} key - The key to update.
    * @param {*} newValue - The new value to set.
    */
@@ -93,7 +96,9 @@ export class Update extends Diff {
 }
 
 /**
- * Represents an addition operation (adding a value at a key).
+ * Represents an addition operation in a diff.
+ * @property {*} key - The key where the value is added.
+ * @property {*} value - The value being added.
  */
 export class Addition extends Diff {
   /**
@@ -107,8 +112,9 @@ export class Addition extends Diff {
    */
   value: any;
   /**
-   * @param {*} key - The key to add.
-   * @param {*} value - The value to add.
+   * Constructs an Addition operation.
+   * @param {*} key - The key where the value is added.
+   * @param {*} value - The value being added.
    */
   constructor(key: any, value: any) {
     super();
@@ -130,7 +136,8 @@ export class Addition extends Diff {
 }
 
 /**
- * Represents a deletion operation (removing a value at a key).
+ * Represents a deletion operation in a diff.
+ * @property {*} key - The key of the value being deleted.
  */
 export class Deletion extends Diff {
   /**
@@ -139,7 +146,8 @@ export class Deletion extends Diff {
    */
   key: any;
   /**
-   * @param {*} key - The key to delete.
+   * Constructs a Deletion operation.
+   * @param {*} key - The key of the value being deleted.
    */
   constructor(key: any) {
     super();
@@ -160,7 +168,9 @@ export class Deletion extends Diff {
 }
 
 /**
- * Represents a movement operation (moving a value from one key to another).
+ * Represents a movement operation in a diff.
+ * @property {*} oldKey - The original key or index.
+ * @property {*} newKey - The new key or index.
  */
 export class Movement extends Diff {
   /**
@@ -174,8 +184,9 @@ export class Movement extends Diff {
    */
   newKey: any;
   /**
-   * @param {*} oldKey - The original key.
-   * @param {*} newKey - The new key.
+   * Constructs a Movement operation.
+   * @param {*} oldKey - The original key or index.
+   * @param {*} newKey - The new key or index.
    */
   constructor(oldKey: any, newKey: any) {
     super();

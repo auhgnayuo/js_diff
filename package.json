@@ -39,7 +39,7 @@
     "object",
     "map"
   ],
-  "description": "A lightweight, type-safe, and universal diff/patch library for Arrays, Objects (Record), and Maps. Ideal for data synchronization, state management, collaborative editing, and more.",
+  "description": "A cross-language library for calculating and applying diffs (changes) between collections (arrays, maps, objects).",
   "module": "dist/diff.esm.js",
   "size-limit": [
     {
